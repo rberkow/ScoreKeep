@@ -20,6 +20,9 @@ import ca.mcgill.ecse321.scorekeeper.shared.model.Player;
 import ca.mcgill.ecse321.scorekeeper.shared.view.LeagueView;
 import ca.mcgill.ecse321.scorekeeper.shared.view.PlayerView;
 
+/**
+ * View player data in various sequences.
+ */
 public class PlayerViewActivity extends AppCompatActivity {
 
     ListView listPlayers;
@@ -43,6 +46,10 @@ public class PlayerViewActivity extends AppCompatActivity {
         RadioButton chooseGoals = (RadioButton) findViewById(R.id.radioButton);
         RadioButton choosePenalties = (RadioButton)findViewById(R.id.radioButton2);
         chooseGoals.setOnClickListener(new View.OnClickListener() {
+            /**
+             * On selection of "Goals" radio button, display player shot data and sort players by goals scored.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 players = pv.orderedDataCollection(LeagueView.Ordering.ORDER_BY_GOALS);
@@ -55,6 +62,10 @@ public class PlayerViewActivity extends AppCompatActivity {
             }
         });
         choosePenalties.setOnClickListener(new View.OnClickListener() {
+            /**
+             * On selection of "Penalties" radio button, display player penalty data and sort players by total number of penalties.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 players = pv.orderedDataCollection(LeagueView.Ordering.ORDER_BY_PENALTIES);
@@ -69,7 +80,7 @@ public class PlayerViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    public void updateList(){
+    private void updateList(){
         listPlayers = (ListView) findViewById(R.id.listView2);
 
         if (players == null){
@@ -82,7 +93,7 @@ public class PlayerViewActivity extends AppCompatActivity {
 
     }
 
-    public void getGoalData(){
+    private void getGoalData(){
         ListView listData = (ListView) findViewById(R.id.listView3);
         ArrayList<String> goals = new ArrayList<String>();
         for (Player p : players){
@@ -92,7 +103,7 @@ public class PlayerViewActivity extends AppCompatActivity {
         listData.setAdapter(dataAdapter);
     }
 
-    public void getShotData(){
+    private void getShotData(){
         ListView listData = (ListView) findViewById(R.id.listView4);
         ArrayList<String> shots = new ArrayList<String>();
         for (Player p: players){
@@ -102,7 +113,7 @@ public class PlayerViewActivity extends AppCompatActivity {
         listData.setAdapter(dataAdapter);
     }
 
-    public void getRedsData(){
+    private void getRedsData(){
         ListView listData = (ListView) findViewById(R.id.listView3);
         ArrayList<String> reds = new ArrayList<String>();
         for (Player p: players){
@@ -118,7 +129,7 @@ public class PlayerViewActivity extends AppCompatActivity {
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, reds);
         listData.setAdapter(dataAdapter);
     }
-    public void getYellowsData(){
+    private void getYellowsData(){
         ListView listData = (ListView) findViewById(R.id.listView4);
         ArrayList<String> yellows = new ArrayList<String>();
         for (Player p: players){

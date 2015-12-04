@@ -30,10 +30,12 @@ import ca.mcgill.ecse321.scorekeeper.shared.view.LiveEntryView;
 import ca.mcgill.ecse321.scorekeeper.shared.view.NewPlayerView;
 import ca.mcgill.ecse321.scorekeeper.shared.view.PlayerView;
 
+/**
+ * Class for all live entry of match data - adds data to the model one at a time.
+ */
 public class LiveEntryActivity extends AppCompatActivity{
 
     Player selectedPlayer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +130,11 @@ public class LiveEntryActivity extends AppCompatActivity{
 
         Button submit = (Button) findViewById(R.id.button13);
         submit.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Sets match to be closed on click of "Submit Match" button.
+             * Also takes you back to the main input activity.
+             * @param view
+             */
             @Override
             public void onClick(View view){
                 try {

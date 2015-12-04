@@ -27,6 +27,9 @@ import ca.mcgill.ecse321.scorekeeper.shared.view.LiveEntryView;
 import ca.mcgill.ecse321.scorekeeper.shared.view.ManageTeamsView;
 import ca.mcgill.ecse321.scorekeeper.shared.view.NewTeamView;
 
+/**
+ * Add new teams to database.
+ */
 public class NewTeamActivity extends AppCompatActivity{
 
     @Override
@@ -48,6 +51,11 @@ public class NewTeamActivity extends AppCompatActivity{
         Button fab = (Button) findViewById(R.id.button9);
         fab.setOnClickListener(new View.OnClickListener() {
             String name;
+
+            /**
+             * When "Add Team" clicked, create team and associate selected players to the team.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 name = teamName.getText().toString();

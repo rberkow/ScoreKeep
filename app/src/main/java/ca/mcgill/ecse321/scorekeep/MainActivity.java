@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+/**
+ * Main view from where the two main use cases can be accessed.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button fab = (Button) findViewById(R.id.button);
         fab.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Switch to scorekeeper (input data) view when "Scorekeeper" button clicked.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, InputActivity.class));
@@ -31,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button viewOption = (Button) findViewById(R.id.button2);
         viewOption.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Switch to fan (display data) view when "Interested Party" button clicked.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ViewActivity.class));
@@ -38,25 +49,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

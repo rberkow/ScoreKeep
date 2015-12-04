@@ -9,6 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * From this view, both of the different ways to display data can be accessed.
+ */
 public class ViewActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +29,8 @@ public class ViewActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // TODO: Implement LeagueView
     }
 
 }

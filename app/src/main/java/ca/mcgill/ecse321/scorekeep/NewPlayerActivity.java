@@ -13,6 +13,9 @@ import android.widget.EditText;
 import ca.mcgill.ecse321.scorekeeper.shared.model.DomainManager;
 import ca.mcgill.ecse321.scorekeeper.shared.view.NewPlayerView;
 
+/**
+ * From this view, new players can be added to the model.
+ */
 public class NewPlayerActivity extends AppCompatActivity {
 
     @Override
@@ -34,6 +37,10 @@ public class NewPlayerActivity extends AppCompatActivity {
             String position = "";
             int number = 0;
 
+            /**
+             * When "Add Player" button clicked, add player with inputted data.
+             * @param view
+             */
             @Override
             public void onClick(View view) {
                 name = playerName.getText().toString();
